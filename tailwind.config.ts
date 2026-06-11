@@ -5,11 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#0C1B33',
+        navy: '#283358',
         sapphire: '#1E56A0',
-        gold: '#C9A227',
+        gold: '#F08A2B',
         ice: '#EEF3F9',
-        ink: '#16233A',
+        ink: '#1F2A47',
       },
       fontFamily: {
         display: ['var(--font-display)', 'serif'],

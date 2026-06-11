@@ -17,8 +17,9 @@ export default async function Home() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-navy/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <a href="#inicio" className="flex items-center gap-2.5">
-            <span className="diamond" aria-hidden />
-            <span className="font-display text-lg text-white">{school.name}</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-transparente.png" alt="" className="h-9 w-auto rounded-full bg-white p-0.5" />
+            <span className="font-display text-base text-white sm:text-lg">{school.name}</span>
           </a>
           <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
             <a className="transition hover:text-white" href="#nosotros">Nosotros</a>
@@ -43,6 +44,8 @@ export default async function Home() {
           className="pointer-events-none absolute -right-10 top-32 h-64 w-64 rotate-45 rounded-2xl border border-sapphire/40"
         />
         <div className="mx-auto max-w-6xl px-4 py-24 md:py-36">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-transparente.png" alt={school.name} className="mb-6 h-28 w-auto rounded-2xl bg-white/95 p-3 md:h-32" />
           <p className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gold">
             <span className="diamond" aria-hidden /> Inscripciones abiertas
           </p>
@@ -187,9 +190,9 @@ export default async function Home() {
 
       {/* FOOTER */}
       <footer className="border-t border-white/10 bg-navy py-8 text-center text-sm text-white/60">
-        <p className="flex items-center justify-center gap-2">
-          <span className="diamond" aria-hidden /> {school.name}
-        </p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-transparente.png" alt="" className="mx-auto mb-3 h-12 w-auto rounded-full bg-white p-1" />
+        <p>{school.name}</p>
         <p className="mt-2">© {new Date().getFullYear()} Todos los derechos reservados.</p>
       </footer>
     </main>
