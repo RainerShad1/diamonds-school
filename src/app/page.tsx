@@ -1,7 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { school, niveles } from '@/lib/config';
 import Galeria from '@/components/Galeria';
-import HeroDestacadas from '@/components/HeroDestacadas';
 
 export const dynamic = 'force-dynamic';
 
@@ -43,23 +42,20 @@ export default async function Home() {
           aria-hidden
           className="pointer-events-none absolute -right-10 top-32 h-64 w-64 rotate-45 rounded-2xl border border-sapphire/40"
         />
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-24 md:py-32 lg:grid-cols-2">
-          <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-transparente.png" alt={school.name} className="mb-6 h-28 w-auto rounded-2xl bg-white/95 p-3 md:h-32" />
-            <p className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gold">
-              <span className="diamond" aria-hidden /> Inscripciones abiertas
-            </p>
-            <h1 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
-              {school.name}
-            </h1>
-            <p className="mt-4 max-w-xl text-lg text-white/80">{school.slogan}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/formulario" className="btn-gold">Iniciar inscripción</a>
-              <a href="#contacto" className="btn-outline">Contáctanos</a>
-            </div>
+        <div className="mx-auto max-w-6xl px-4 py-24 md:py-36">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-transparente.png" alt={school.name} className="mb-6 h-28 w-auto rounded-2xl bg-white/95 p-3 md:h-32" />
+          <p className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gold">
+            <span className="diamond" aria-hidden /> Inscripciones abiertas
+          </p>
+          <h1 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
+            {school.name}
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-white/80">{school.slogan}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="/formulario" className="btn-gold">Iniciar inscripción</a>
+            <a href="#contacto" className="btn-outline">Contáctanos</a>
           </div>
-          <HeroDestacadas imagenes={imagenes.slice(0, 3)} />
         </div>
       </section>
 

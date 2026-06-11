@@ -10,4 +10,4 @@ export const school = {
     process.env.NEXT_PUBLIC_SCHOOL_ADDRESS || 'La Romana, República Dominicana',
 };
 
-export const niveles = ['Inicial', 'Pre-Primaria', 'Primaria', 'Secundaria'];
+export const niveles = ['Inicial', 'Pre-Primaria', 'Primaria'];
