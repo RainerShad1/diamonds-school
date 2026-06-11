@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { school, niveles } from '@/lib/config';
-import InscripcionForm from '@/components/InscripcionForm';
 import Galeria from '@/components/Galeria';
+import HeroDestacadas from '@/components/HeroDestacadas';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,7 +27,7 @@ export default async function Home() {
             <a className="transition hover:text-white" href="#noticias">Noticias</a>
             <a className="transition hover:text-white" href="#contacto">Contacto</a>
           </nav>
-          <a href="#inscripcion" className="rounded-md bg-gold px-4 py-2 text-sm font-medium text-navy transition hover:brightness-110">
+          <a href="/formulario" className="rounded-md bg-gold px-4 py-2 text-sm font-medium text-navy transition hover:brightness-110">
             Inscríbete
           </a>
         </div>
@@ -43,20 +43,23 @@ export default async function Home() {
           aria-hidden
           className="pointer-events-none absolute -right-10 top-32 h-64 w-64 rotate-45 rounded-2xl border border-sapphire/40"
         />
-        <div className="mx-auto max-w-6xl px-4 py-24 md:py-36">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-transparente.png" alt={school.name} className="mb-6 h-28 w-auto rounded-2xl bg-white/95 p-3 md:h-32" />
-          <p className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gold">
-            <span className="diamond" aria-hidden /> Inscripciones abiertas
-          </p>
-          <h1 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
-            {school.name}
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-white/80">{school.slogan}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#inscripcion" className="btn-gold">Iniciar inscripción</a>
-            <a href="#contacto" className="btn-outline">Contáctanos</a>
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-24 md:py-32 lg:grid-cols-2">
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-transparente.png" alt={school.name} className="mb-6 h-28 w-auto rounded-2xl bg-white/95 p-3 md:h-32" />
+            <p className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gold">
+              <span className="diamond" aria-hidden /> Inscripciones abiertas
+            </p>
+            <h1 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
+              {school.name}
+            </h1>
+            <p className="mt-4 max-w-xl text-lg text-white/80">{school.slogan}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/formulario" className="btn-gold">Iniciar inscripción</a>
+              <a href="#contacto" className="btn-outline">Contáctanos</a>
+            </div>
           </div>
+          <HeroDestacadas imagenes={imagenes.slice(0, 3)} />
         </div>
       </section>
 
@@ -136,25 +139,20 @@ export default async function Home() {
 
       {/* INSCRIPCION */}
       <section id="inscripcion" className="bg-navy py-20 text-white">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid items-start gap-10 lg:grid-cols-2">
-            <div>
-              <h2 className="flex items-center gap-3 font-display text-3xl md:text-4xl">
-                <span className="diamond" aria-hidden /> Inscripción
-              </h2>
-              <p className="mt-4 max-w-md text-white/75">
-                Completa el formulario y nuestro equipo se pondrá en contacto contigo
-                para continuar el proceso. Recibirás un código de solicitud para dar
-                seguimiento.
-              </p>
-              <ul className="mt-6 space-y-2 text-sm text-white/70">
-                <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Respuesta en 24–48 horas</li>
-                <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Proceso 100% guiado</li>
-                <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Cupos limitados por nivel</li>
-              </ul>
-            </div>
-            <InscripcionForm />
-          </div>
+        <div className="mx-auto max-w-6xl px-4 text-center">
+          <h2 className="flex items-center justify-center gap-3 font-display text-3xl md:text-4xl">
+            <span className="diamond" aria-hidden /> Inscripciones abiertas
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/75">
+            Completa el formulario de admisión en línea. Recibirás un código de
+            solicitud y nuestro equipo te contactará para continuar el proceso.
+          </p>
+          <ul className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/70">
+            <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Respuesta en 24–48 horas</li>
+            <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Proceso 100% guiado</li>
+            <li className="flex items-center gap-2"><span className="diamond" aria-hidden /> Cupos limitados por nivel</li>
+          </ul>
+          <a href="/formulario" className="btn-gold mt-8">Envía tu inscripción aquí</a>
         </div>
       </section>
 
